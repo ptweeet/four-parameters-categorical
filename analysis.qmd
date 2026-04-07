@@ -2,5 +2,15 @@
 title: "Four Parameters Categorical"
 author: "Alec Rogers"
 format: html
+execute: 
+  echo: false
 ---
 
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(primer.data)
+```
+Voting preferences may vary on the basis of sex, and understanding this relationship is crucial for designing effective campaign strategies. Using the nes data including information from the American National Election Studies survey, we will investigate male and female voting preferences for the Bush, Clinton and Perot in the 1992 US presidential election.

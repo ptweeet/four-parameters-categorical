@@ -12,5 +12,11 @@ execute:
 
 library(tidyverse)
 library(primer.data)
+library(tidymodels)
+library(broom)
 ```
-Voting preferences may vary on the basis of sex, and understanding this relationship is crucial for designing effective campaign strategies. Using the nes data including information from the American National Election Studies survey, we will investigate male and female voting preferences for the Bush, Clinton and Perot in the 1992 US presidential election.
+Voting preferences may vary on the basis of sex, and understanding this relationship is crucial for designing effective campaign strategies. Using the nes data including information from the American National Election Studies survey, we will investigate male and female voting preferences for the Bush, Clinton and Perot in the 1992 US presidential election. Our data is limited in that it comes from a survey: those who answer surveys may not be representative of voters in the 1992 US presidential election.
+
+$$P(Y = k) = \frac{e^{\beta_{k0} + \beta_{k1} X_1 + \beta_{k2} X_2 + \cdots + \beta_{kn} X_n}}{\sum_{j=1}^{K} e^{\beta_{j0} + \beta_{j1} X_1 + \beta_{j2} X_2 + \cdots + \beta_{jn} X_n}}$$
+
+with $Y \sim \text{Multinomial}(\boldsymbol{\rho})$ where $\boldsymbol{\rho} = (\rho_1, \rho_2, \ldots, \rho_K)$ are the probabilities above.

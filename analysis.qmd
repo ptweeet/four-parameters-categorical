@@ -1,0 +1,6 @@
+---
+title: "Four Parameters Categorical"
+author: "Alec Rogers"
+format: html
+---
+

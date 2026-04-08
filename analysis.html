@@ -102,26 +102,18 @@ window.Quarto = {
 </header>
 
 
-<p>Voting preferences may vary on the basis of sex, and understanding this relationship is crucial for designing effective campaign strategies. Using the nes data including information from the American National Election Studies survey, we investigate male and female voting preferences for the Bush, Clinton and Perot in the 1992 US presidential election. Our data is limited in that it comes from a survey: those who answer surveys may not be representative of voters in the 1992 US presidential election. We model voting as a multinomial function of voters’ sex.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Voting preferences may vary on the basis of sex, and understanding this relationship is crucial for designing effective campaign strategies. Using the nes data including information from the American National Election Studies survey, we investigate male and female voting preferences for the Bush, Clinton and Perot in the 1992 US presidential election. Our data is limited in that it comes from a survey: those who answer surveys may not be representative of voters in the 1992 US presidential election. We model voting as a multinomial function of voters’ sex. We found that males voted less for Clinton and more for Bush compared to females.</p>
 <p><span class="math display">\[P(Y = k) = \frac{e^{\beta_{k0} + \beta_{k1} X_1 + \beta_{k2} X_2 + \cdots + \beta_{kn} X_n}}{\sum_{j=1}^{K} e^{\beta_{j0} + \beta_{j1} X_1 + \beta_{j2} X_2 + \cdots + \beta_{jn} X_n}}\]</span></p>
 <p>with <span class="math inline">\(Y \sim \text{Multinomial}(\boldsymbol{\rho})\)</span> where <span class="math inline">\(\boldsymbol{\rho} = (\rho_1, \rho_2, \ldots, \rho_K)\)</span> are the probabilities above.</p>
-<p>Now we set up our data set</p>
-<p>Possible <span class="math inline">\(\LaTeX\)</span> representations of this model <span class="math display">\[
-Y_i \in \{\text{Clinton}, \text{Bush}, \text{Perot}\}
-\]</span></p>
-<p><span class="math display">\[
-Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
-\]</span></p>
-<p><span class="math display">\[
-\boldsymbol{\pi}_i =
-\left(
-\pi_{i,\text{Clinton}},\,
-\pi_{i,\text{Bush}},\,
-\pi_{i,\text{Perot}}
-\right),
-\qquad
-\sum_{k} \pi_{i,k} = 1
-\]</span></p>
 <p>Let Bush be the baseline category. Then the model is:</p>
 <p><span class="math display">\[
 \log\left(\frac{\pi_{i,\text{Clinton}}}{\pi_{i,\text{Bush}}}\right)
@@ -131,29 +123,25 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
 \log\left(\frac{\pi_{i,\text{Perot}}}{\pi_{i,\text{Bush}}}\right)
 = \beta_{0,\text{Perot}} + \beta_{1,\text{Perot}} \cdot \text{sex}_i
 \]</span></p>
-<p>Another representation</p>
-<p><span class="math display">\[
-\pi_{i,\text{Bush}} = 1 - \pi_{i,\text{Clinton}} - \pi_{i,\text{Perot}}
-\]</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="jkpuuokkav" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jkpuuokkav table {
+<div id="aywnqoihzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aywnqoihzb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jkpuuokkav thead, #jkpuuokkav tbody, #jkpuuokkav tfoot, #jkpuuokkav tr, #jkpuuokkav td, #jkpuuokkav th {
+#aywnqoihzb thead, #aywnqoihzb tbody, #aywnqoihzb tfoot, #aywnqoihzb tr, #aywnqoihzb td, #aywnqoihzb th {
   border-style: none;
 }
 
-#jkpuuokkav p {
+#aywnqoihzb p {
   margin: 0;
   padding: 0;
 }
 
-#jkpuuokkav .gt_table {
+#aywnqoihzb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -179,12 +167,12 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-left-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_caption {
+#aywnqoihzb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jkpuuokkav .gt_title {
+#aywnqoihzb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -196,7 +184,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-bottom-width: 0;
 }
 
-#jkpuuokkav .gt_subtitle {
+#aywnqoihzb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -208,7 +196,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-top-width: 0;
 }
 
-#jkpuuokkav .gt_heading {
+#aywnqoihzb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -220,13 +208,13 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-right-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_bottom_border {
+#aywnqoihzb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_col_headings {
+#aywnqoihzb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -241,7 +229,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-right-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_col_heading {
+#aywnqoihzb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -261,7 +249,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   overflow-x: hidden;
 }
 
-#jkpuuokkav .gt_column_spanner_outer {
+#aywnqoihzb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -273,15 +261,15 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 4px;
 }
 
-#jkpuuokkav .gt_column_spanner_outer:first-child {
+#aywnqoihzb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jkpuuokkav .gt_column_spanner_outer:last-child {
+#aywnqoihzb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jkpuuokkav .gt_column_spanner {
+#aywnqoihzb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -293,11 +281,11 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   width: 100%;
 }
 
-#jkpuuokkav .gt_spanner_row {
+#aywnqoihzb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jkpuuokkav .gt_group_heading {
+#aywnqoihzb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -323,7 +311,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   text-align: left;
 }
 
-#jkpuuokkav .gt_empty_group_heading {
+#aywnqoihzb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -338,15 +326,15 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   vertical-align: middle;
 }
 
-#jkpuuokkav .gt_from_md > :first-child {
+#aywnqoihzb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jkpuuokkav .gt_from_md > :last-child {
+#aywnqoihzb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jkpuuokkav .gt_row {
+#aywnqoihzb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -365,7 +353,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   overflow-x: hidden;
 }
 
-#jkpuuokkav .gt_stub {
+#aywnqoihzb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -378,7 +366,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 5px;
 }
 
-#jkpuuokkav .gt_stub_row_group {
+#aywnqoihzb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -392,15 +380,15 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   vertical-align: top;
 }
 
-#jkpuuokkav .gt_row_group_first td {
+#aywnqoihzb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jkpuuokkav .gt_row_group_first th {
+#aywnqoihzb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jkpuuokkav .gt_summary_row {
+#aywnqoihzb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -410,16 +398,16 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 5px;
 }
 
-#jkpuuokkav .gt_first_summary_row {
+#aywnqoihzb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_first_summary_row.thick {
+#aywnqoihzb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jkpuuokkav .gt_last_summary_row {
+#aywnqoihzb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -429,7 +417,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-bottom-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_grand_summary_row {
+#aywnqoihzb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -439,7 +427,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 5px;
 }
 
-#jkpuuokkav .gt_first_grand_summary_row {
+#aywnqoihzb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -449,7 +437,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-top-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_last_grand_summary_row_top {
+#aywnqoihzb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -459,11 +447,11 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-bottom-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_striped {
+#aywnqoihzb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jkpuuokkav .gt_table_body {
+#aywnqoihzb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -472,7 +460,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-bottom-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_footnotes {
+#aywnqoihzb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -486,7 +474,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-right-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_footnote {
+#aywnqoihzb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -495,7 +483,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 5px;
 }
 
-#jkpuuokkav .gt_sourcenotes {
+#aywnqoihzb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -509,7 +497,7 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   border-right-color: #D3D3D3;
 }
 
-#jkpuuokkav .gt_sourcenote {
+#aywnqoihzb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -517,72 +505,72 @@ Y_i \mid \text{sex}_i \sim \operatorname{Categorical}(\boldsymbol{\pi}_i)
   padding-right: 5px;
 }
 
-#jkpuuokkav .gt_left {
+#aywnqoihzb .gt_left {
   text-align: left;
 }
 
-#jkpuuokkav .gt_center {
+#aywnqoihzb .gt_center {
   text-align: center;
 }
 
-#jkpuuokkav .gt_right {
+#aywnqoihzb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jkpuuokkav .gt_font_normal {
+#aywnqoihzb .gt_font_normal {
   font-weight: normal;
 }
 
-#jkpuuokkav .gt_font_bold {
+#aywnqoihzb .gt_font_bold {
   font-weight: bold;
 }
 
-#jkpuuokkav .gt_font_italic {
+#aywnqoihzb .gt_font_italic {
   font-style: italic;
 }
 
-#jkpuuokkav .gt_super {
+#aywnqoihzb .gt_super {
   font-size: 65%;
 }
 
-#jkpuuokkav .gt_footnote_marks {
+#aywnqoihzb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jkpuuokkav .gt_asterisk {
+#aywnqoihzb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jkpuuokkav .gt_indent_1 {
+#aywnqoihzb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jkpuuokkav .gt_indent_2 {
+#aywnqoihzb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jkpuuokkav .gt_indent_3 {
+#aywnqoihzb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jkpuuokkav .gt_indent_4 {
+#aywnqoihzb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jkpuuokkav .gt_indent_5 {
+#aywnqoihzb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jkpuuokkav .katex-display {
+#aywnqoihzb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jkpuuokkav div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aywnqoihzb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
